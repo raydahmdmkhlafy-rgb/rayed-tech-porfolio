@@ -1,0 +1,36 @@
+Result Size: 724 x 771
+
+ {name:'HP Core i7 13th',price:520000,cat:'laptop',img:'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400'},
+ {name:'Dell i5 12th',price:380000,cat:'laptop',img:'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400'},
+ {name:'Lenovo IdeaPad 3',price:295000,cat:'laptop',img:'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400'},
+ {name:'Asus VivoBook i3',price:245000,cat:'laptop',img:'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400'},
+ // شاشات 10
+ {name:'سامسونج 32 Smart',price:145000,cat:'tv',img:'https://images.unsplash.com/photo-1593359677879-a4bb92f367d8?w=400'},
+ {name:'LG 43 4K Smart',price:265000,cat:'tv',img:'https://images.unsplash.com/photo-1567690187548-f07b1d7bf5a9?w=400'},
+ {name:'TCL 50 QLED 4K',price:345000,cat:'tv',img:'https://images.unsplash.com/photo-1593359677879-a4bb92f367d8?w=400'},
+ {name:'Hisense 55 4K',price:410000,cat:'tv',img:'https://images.unsplash.com/photo-1567690187548-f07b1d7bf5a9?w=400'},
+ {name:'سامسونج 60 Crystal 4K',price:520000,cat:'tv',img:'https://images.unsplash.com/photo-1593359677879-a4bb92f367d8?w=400'},
+ {name:'LG 65 OLED 4K',price:680000,cat:'tv',img:'https://images.unsplash.com/photo-1593359677879-a4bb92f367d8?w=400'},
+ {name:'سامسونج 75 Crystal',price:890000,cat:'tv',img:'https://images.unsplash.com/photo-1593359677879-a4bb92f367d8?w=400'},
+ {name:'TCL 65 Google TV',price:590000,cat:'tv',img:'https://images.unsplash.com/photo-1593359677879-a4bb92f367d8?w=400'},
+ {name:'Skyworth 42 FHD',price:195000,cat:'tv',img:'https://images.unsplash.com/photo-1567690187548-f07b1d7bf5a9?w=400'},
+ {name:'Icon 32 FHD',price:98000,cat:'tv',img:'https://images.unsplash.com/photo-1593359677879-a4bb92f367d8?w=400'},
+];
+function render(list){
+document.getElementById('products').innerHTML=list.map(p=>`
+<div class="bg-[#111] border border-yellow-600/20 rounded-xl overflow-hidden hover:border-yellow-500">
+<img src="${p.img}" class="w-full h-32 object-cover">
+<div class="p-2"><h3 class="text-[11px] font-bold h-8">${p.name}</h3>
+<p class="text-yellow-400 font-black text-sm mt-1">${p.price.toLocaleString()} ريال</p>
+<a href="https://wa.me/${WA}?text=السلام عليكم اريد ${encodeURIComponent(p.name)}" target="_blank" class="block mt-2 bg-[#D4AF37] text-black py-2 rounded-full text-[11px] font-black text-center">اطلب 711720425</a>
+</div></div>`).join('');
+}
+function filterCat(c,b){
+document.querySelectorAll('.filter-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');
+if(c=='all') render(all); else render(all.filter(p=>p.cat==c));
+}
+render(all);
+</script>
+</body>
+</html>
+​
